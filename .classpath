@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_131">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5">
+		<attributes>
+			<attribute name="owner.project.facets" value="jst.web"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/gson-2.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jackson-core-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jackson-jaxrs-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jackson-mapper-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jackson-xc-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jersey-client-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jersey-core-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jersey-json-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jersey-server-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jersey-servlet-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jettison-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/jsr311-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.0.1.Final/hibernate-commons-annotations-5.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/.m2/repository/org/hibernate/hibernate-core/5.0.11.Final/hibernate-core-5.0.11.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/.m2/repository/org/hibernate/hibernate-entitymanager/5.0.11.Final/hibernate-entitymanager-5.0.11.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/.m2/repository/org/hibernate/hibernate-validator/5.2.4.Final/hibernate-validator-5.2.4.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
