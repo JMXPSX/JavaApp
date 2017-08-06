@@ -1,5 +1,5 @@
 projectKey=org.sonarqube:mySurvey-11193557
 serverUrl=http://localhost:9000
 dashboardUrl=http://localhost:9000/dashboard/index/org.sonarqube:mySurvey-11193557
-ceTaskId=AV2bgdEMd_meGQMzkuZ3
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AV2bgdEMd_meGQMzkuZ3
+ceTaskId=AV21hf-Hgxlzo4Q8R2lb
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AV21hf-Hgxlzo4Q8R2lb

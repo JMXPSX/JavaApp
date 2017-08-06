@@ -1,5 +1,7 @@
 package com.surveyApp.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="tblFeedback")
-public class Feedback {
+public class Feedback implements Serializable{
 	
 	@Id 
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,10 +19,12 @@ public class Feedback {
 	private int userId;
 	private String description;
 	
-	public Feedback() {};
+	public Feedback() {
+		super();
+	}
 	
 	public Feedback(int feedbackId, int surveyId, int userId, String description) {
-		
+		super();
 		this.feedbackId = feedbackId;
 		this.surveyId = surveyId;
 		this.userId = userId;

@@ -122,7 +122,7 @@ app.controller("SurveyCtrl", function($http){
 		
 		setTimeout(function(){
 			sCtrl.initialize();
-		}, 1000);
+		}, 3000);
 	};
 	
 	sCtrl.createFeedback = function(){

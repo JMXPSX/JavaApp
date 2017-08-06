@@ -33,5 +33,12 @@
 	<classpathentry kind="lib" path="C:/Users/JMXPSX/.m2/repository/org/hibernate/hibernate-entitymanager/5.0.11.Final/hibernate-entitymanager-5.0.11.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Users/JMXPSX/.m2/repository/org/hibernate/hibernate-validator/5.2.4.Final/hibernate-validator-5.2.4.Final.jar"/>
 	<classpathentry kind="lib" path="C:/Users/JMXPSX/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/eclipselink.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/javax.persistence_2.1.1.v201509150925.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/javax.persistence.source_2.1.1.v201509150925.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/org.eclipse.persistence.jpa.modelgen.source_2.6.4.v20160829-44060b6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/org.eclipse.persistence.jpa.modelgen_2.6.4.v20160829-44060b6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/org.eclipse.persistence.jpars.source_2.6.4.v20160829-44060b6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/JMXPSX/eclipse-workspace/mySurvey-11193557/WebContent/WEB-INF/lib/org.eclipse.persistence.jpars_2.6.4.v20160829-44060b6.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

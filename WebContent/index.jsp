@@ -14,7 +14,6 @@
 	</head>
 	
 	<body ng-app="app" ng-controller="SurveyCtrl as surveyCtrl">
-
 		<section id="contact" class="content-section text-center">
 	        <div class="contact-section">
 	            <div class="container">
@@ -34,7 +33,7 @@
 		                            </span>
 		                        </h4>
 		                    </a>
-		                </div>
+		                </div> 		                
 		            </div>	                
 	                
 	                <form ng-if="surveyCtrl.showSurveyForm" class="form-horizontal" method="post">
@@ -80,6 +79,8 @@
 	            </div>
 	        </div>
       </section>	
+      
+
 		
 	</body>
 </html>
