@@ -1,11 +1,10 @@
-var app = angular.module("app", []);
+var myApp = angular.module("myApp", []);
 
-app.controller("SurveyCtrl", function($http){
+myApp.controller("SurveyCtrl", function($http){
 	var sCtrl = this;
 	
-	sCtrl.initialize = function() {
-		
-		$http.get('/mySurvey-11193557/services/survey/getAllSurvey').then(function(data){
+	sCtrl.initialize = function() {		
+		$http.get('/mySurvey-11193557/services/survey/getAllSurvey').then(function(data){		
 			sCtrl.surveyList = data.data;
 			
 			sCtrl.survey = {
@@ -13,53 +12,69 @@ app.controller("SurveyCtrl", function($http){
 				surveyId : undefined,
 				surveyDescription : undefined,
 				surveyFeedback : undefined
-			};
+			};			
 			
 			sCtrl.showSurveyList = true;
 			sCtrl.showCreate = false;
 			sCtrl.showUpdate = false;
 			sCtrl.showDelete = false;
 			sCtrl.showSave = false;
+			sCtrl.showFeedbackDesc = false;
+			sCtrl.showSaveFeedback = false;
 			sCtrl.showBack = false;
 			sCtrl.showSurveyForm = false;
 			sCtrl.showFeedback = false;
-			sCtrl.operation = '';
-				
-		});
-		
+			sCtrl.operation = '';				
+		});		
 	};
 	
 	sCtrl.initialize();
 	
-	sCtrl.selectSurvey = function(survey){
-		
-		sCtrl.survey.surveyId = survey.surveyId;
-		sCtrl.survey.username = survey.userId;
-		sCtrl.survey.surveyDescription = survey.description;
-		
-		sCtrl.showSurveyList = false;
-		sCtrl.showCreate = true;
-		sCtrl.showUpdate = true;
-		sCtrl.showDelete = true;
-		sCtrl.showSave = false;
-		sCtrl.showBack = true;
-		sCtrl.showSurveyForm = true;
-		sCtrl.showFeedback = true;
-		sCtrl.operation = 'select';
+	sCtrl.selectSurvey = function(survey){		
+		$http.get('/mySurvey-11193557/services/survey/getAllFeedback/' + survey.surveyId).then(function(data){			
+			sCtrl.survey.surveyId = survey.surveyId;
+			sCtrl.survey.username = survey.userId;
+			sCtrl.survey.surveyDescription = survey.description;
+			sCtrl.tableData = data.data;
+			
+			sCtrl.showSurveyList = false;
+			sCtrl.showCreate = true;
+			sCtrl.showUpdate = true;
+			sCtrl.showDelete = true;
+			sCtrl.showSave = false;
+			sCtrl.showFeedbackDesc = false;
+			sCtrl.showSaveFeedback = false;
+			sCtrl.showBack = true;
+			sCtrl.showSurveyForm = true;
+			sCtrl.showFeedback = true;
+			sCtrl.operation = 'select';			
+		});	
 	};
 	
 	sCtrl.createSurvey = function(survey){
-
 		sCtrl.operation = 'create';
-		sCtrl.clearForm(survey, false);
-		
+		sCtrl.clearForm(survey, false);		
 		sCtrl.showCreate = false;
 		sCtrl.showUpdate = false;
 		sCtrl.showDelete = false;
 		sCtrl.showSave = true;
+		sCtrl.showFeedbackDesc = false;
+		sCtrl.showSaveFeedback = false;
 		sCtrl.showBack = true;
 		sCtrl.showFeedback = false;		
 	};	
+
+	sCtrl.createFeedback = function(survey){
+		sCtrl.operation = 'feedback';
+		sCtrl.showCreate = false;
+		sCtrl.showUpdate = false;
+		sCtrl.showDelete = false;
+		sCtrl.showSave = false;		
+		sCtrl.showFeedbackDesc = true;
+		sCtrl.showSaveFeedback = true;
+		sCtrl.showBack = true;
+		sCtrl.showFeedback = false;	
+	};
 	
 	sCtrl.clearForm = function(survey, isClear) {
 		
@@ -77,21 +92,21 @@ app.controller("SurveyCtrl", function($http){
 	};
 	
 	sCtrl.updateSurvey = function(survey){
-		sCtrl.operation = 'update';
-		
+		sCtrl.operation = 'update';		
 		sCtrl.showCreate = false;
 		sCtrl.showUpdate = false;
 		sCtrl.showDelete = false;
 		sCtrl.showSave = true;
+		sCtrl.showFeedbackDesc = false;
+		sCtrl.showSaveFeedback = false;
 		sCtrl.showBack = true;
-		sCtrl.showFeedback = false;	
-
+		sCtrl.showFeedback = false;
 	};	
 	
 	sCtrl.deleteSurvey = function(survey){
 		sCtrl.operation = 'delete';
 		
-		$http.delete("/mySurvey-11193557/services/survey/delete/" + survey.surveyId);
+		$http.delete('/mySurvey-11193557/services/survey/delete/' + survey.surveyId);
 		
 		setTimeout(function(){
 			sCtrl.initialize();
@@ -99,7 +114,6 @@ app.controller("SurveyCtrl", function($http){
 	};
 	
 	sCtrl.saveSurvey = function(survey, operation){	
-
 		if(null !== survey.surveyDescription && '' !== survey.surveyDescription){
 			var surveyObj = {};
 			surveyObj.surveyId = survey.surveyId;
@@ -125,8 +139,30 @@ app.controller("SurveyCtrl", function($http){
 		}, 3000);
 	};
 	
-	sCtrl.createFeedback = function(){
-		sCtrl.operation = 'feedback';
+	sCtrl.saveFeedback = function(survey, operation){
+		if(null !== survey.surveyFeedback && '' !== survey.surveyFeedback){			
+						
+			var feedbackId = sCtrl.tableData.length !== 0 ? sCtrl.tableData[sCtrl.tableData.length - 1].feedbackId : 0;
+			var surveyObj = {};			
+			
+			surveyObj.feedbackId = feedbackId;
+			surveyObj.surveyId = survey.surveyId;
+			surveyObj.userId = survey.username;
+			surveyObj.description = survey.surveyFeedback;
+			
+			var jsonObj = angular.toJson(surveyObj, false);				
+			
+			$http.post('/mySurvey-11193557/services/survey/feedback', jsonObj);			
+			
+		}else{
+			alert("Survey Feedback is blank!");
+		}
+		
+		setTimeout(function(){
+			sCtrl.initialize();
+		}, 3000);
+		
 	};
-	
+
 }); 
+

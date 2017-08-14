@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>mySurvey-11193557</display-name>
-  <welcome-file-list>
+    <display-name>mySurvey-11193557</display-name>
+    
+    <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+    </welcome-file-list>
   
-  <servlet>
-  	<display-name>SurveyApp</display-name>
+    <servlet>
+    <display-name>SurveyApp</display-name>
     <servlet-name>SurveyApp</servlet-name>
     <servlet-class>
       com.sun.jersey.spi.container.servlet.ServletContainer
@@ -21,17 +22,17 @@
       <param-name>com.sun.jersey.config.property.packages</param-name>
       <param-value>com.surveyApp.impl</param-value>
     </init-param>
-        
+
     <init-param>
       <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
       <param-value>true</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
-  </servlet>
+    </servlet>
   
-  <servlet-mapping>
+    <servlet-mapping>
     <servlet-name>SurveyApp</servlet-name>
     <url-pattern>/services/*</url-pattern>
-  </servlet-mapping>
+    </servlet-mapping>
   
 </web-app>

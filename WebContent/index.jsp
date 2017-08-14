@@ -1,86 +1,100 @@
-<html>
+<html lang="en">
 	<head>
-		<title>Survey</title>
-		<link href="include/style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+		<title>Survey</title>	
+
+		<script type="text/javascript" src="include/angular.min.js"></script>		
+		<script type="text/javascript" src="include/angular-animate.min.js"></script>			
+		<script type="text/javascript" src="include/app.js"></script>		
 		
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>		
-			
-		<script type="text/javascript" src="include/app.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="include/style.css">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">        
 	</head>
 	
-	<body ng-app="app" ng-controller="SurveyCtrl as surveyCtrl">
-		<section id="contact" class="content-section text-center">
-	        <div class="contact-section">
-	            <div class="container">
-	              <h2>Survey Application</h2>
-	              
-	              <div class="row">
-	                <div class="col-md-8 col-md-offset-2">
-	                
-	                <div ng-if="surveyCtrl.showSurveyList" class="row add-padding scrollable">
-		                <div class="list-group">
-		                    <a href="" class="list-group-item" 
-		                       ng-repeat="survey in surveyCtrl.surveyList"
-		                       ng-click="surveyCtrl.selectSurvey(survey)">
-		                        <h4 class="list-group-item-heading">
-		                            <span class="header-h3">
-		                                <strong>{{survey.description}}</strong>
-		                            </span>
-		                        </h4>
-		                    </a>
-		                </div> 		                
-		            </div>	                
-	                
-	                <form ng-if="surveyCtrl.showSurveyForm" class="form-horizontal" method="post">
-	                    <div class="form-group">
-	                      <label for="exampleInputName2">Username</label>
-	                      <input type="text" class="form-control" name = "name" ng-model="surveyCtrl.survey.username" placeholder="JMXPSX" disabled>
-	                    </div>
-	                    <div class="form-group">
-	                      <label for="exampleInputEmail2">Survey Description</label>
-	                      <input class="form-control" name = "description"  ng-model="surveyCtrl.survey.surveyDescription" placeholder="Duterte SONA">
-	                    </div>
-	                    
-	                    <hr/>	
-	                    
-	                    <div ng-if="surveyCtrl.showFeedback">                    
-	                   						
-							<div class="form-group" >
-		                      	<label>Feedback</label>
-	
-								<div class="divTable">
-						             <div ng-repeat="name in surveyCtrl.tableData" class="headRow">
-						                <div class="divCell">{{name.name}}</div>
-						             </div>									
-	      						</div>	                 			
-		                    </div>
-		                    
-		                    <button class="btn btn-default" ng-click="surveyCtrl.createFeedback()">Create Feedback</button>
-								
-							<hr/>
-						
-						</div>
-						
-	                    <button type="submit" class="btn btn-default" ng-if="surveyCtrl.showCreate" ng-click="surveyCtrl.createSurvey(surveyCtrl.survey)">Create Survey</button>
-	                    <button class="btn btn-default" ng-if="surveyCtrl.showUpdate" ng-click="surveyCtrl.updateSurvey(surveyCtrl.survey)">Update Survey</button>
-	                    <button class="btn btn-default" ng-if="surveyCtrl.showDelete" ng-click="surveyCtrl.deleteSurvey(surveyCtrl.survey)">Delete Survey</button>
-	                    <button class="btn btn-default" ng-if="surveyCtrl.showSave" ng-click="surveyCtrl.saveSurvey(surveyCtrl.survey, surveyCtrl.operation)">Save Survey</button>
-	                    <button class="btn btn-default" ng-if="surveyCtrl.showBack" ng-click="surveyCtrl.back()">Back to List</button>
-	                    
-	                  </form>
+	<body ng-app="myApp" ng-controller="SurveyCtrl as surveyCtrl"> 
 
-	                </div>
-	              </div>
-	            </div>
-	        </div>
-      </section>	
-      
-
+		<section class="artistpage">
 		
+		    <div class="search" ng-if="surveyCtrl.showSurveyList">
+		        <h1 class="form-control">Survey Application</h1>
+
+		    </div>
+		    
+		    <div class="main" ng-if="surveyCtrl.showSurveyList">        
+		        <ul class="artistlist" >
+		            <li ng-animate="'animate'" class="artist cf" ng-repeat="survey in surveyCtrl.surveyList" ng-click="surveyCtrl.selectSurvey(survey)">		                
+		                <a ng-href="" >
+		                    <img ng-src="include/survey-icon.png" alt="Photo of {{survey.description}}">
+		                    <div class="info">
+		                        <h2>{{survey.description}}</h2>
+
+		                    </div>
+		                </a>		                
+		            </li>
+		        </ul>
+		    </div>
+		    
+           <form ng-if="surveyCtrl.showSurveyForm" class="search" method="post">
+           
+               <div class="form-group">
+                 <label>Username</label>
+                 <input type="text" class="form-control" name = "username" ng-model="surveyCtrl.survey.username" placeholder="username..." disabled>
+               </div>
+               
+               <div class="form-group">
+                 <label>Survey Description</label>
+                 <input class="form-control" name = "description"  ng-model="surveyCtrl.survey.surveyDescription" placeholder="description...">
+               </div>
+               
+               <hr/>	
+               
+               <div ng-if="surveyCtrl.showFeedback" class="form-control">                    
+              						
+					<div class="form-group" >
+					
+	                  	<label>Feedback</label>
+						
+						<ul class="artistlist" >
+				            <li ng-animate="'animate'" class="artist cf" ng-repeat="feedback in surveyCtrl.tableData">				                
+				                <a ng-href="" >
+				                    <img ng-src="include/feedback-icon.png" alt="Photo of {{feedback.description}}">
+				                    <div class="info">
+				                        <h2>{{feedback.description}}</h2>				                        
+				                    </div>
+				                </a>				                
+				            </li>
+				        </ul>
+	 					                 			
+	                </div>
+	                
+	                <button class="btn btn-default" ng-click="surveyCtrl.createFeedback()">Create Feedback</button>
+			
+					<hr/>
+
+				</div>
+				
+               <div ng-if="surveyCtrl.showFeedbackDesc" class="form-group">
+                 <label>Survey Feedback</label>
+                 <input class="form-control" name = "feedback"  ng-model="surveyCtrl.survey.surveyFeedback" placeholder="Feedback...">
+               </div>
+
+			   <div class="row form-control">
+	               <button type="submit" class="btn btn-default" ng-if="surveyCtrl.showCreate" ng-click="surveyCtrl.createSurvey(surveyCtrl.survey)">Create Survey</button>
+	               <button class="btn btn-default" ng-if="surveyCtrl.showUpdate" ng-click="surveyCtrl.updateSurvey(surveyCtrl.survey)">Update Survey</button>
+	               <button class="btn btn-" ng-if="surveyCtrl.showDelete" ng-click="surveyCtrl.deleteSurvey(surveyCtrl.survey)">Delete Survey</button>
+               </div>
+               
+               <div class="row form-control add-padding">
+	               <button class="btn btn-default" ng-if="surveyCtrl.showSave" ng-click="surveyCtrl.saveSurvey(surveyCtrl.survey, surveyCtrl.operation)">Save Survey</button>
+	               <button class="btn btn-default" ng-if="surveyCtrl.showSaveFeedback" ng-click="surveyCtrl.saveFeedback(surveyCtrl.survey, surveyCtrl.operation)">Save Feedback</button>
+	               <button class="btn btn-default" ng-if="surveyCtrl.showBack" ng-click="surveyCtrl.back()">Back to List</button>
+               </div>
+               
+             </form>
+		    
+		</section>
+
 	</body>
+	
 </html>

@@ -28,7 +28,7 @@ public class Survey implements Serializable{
 		this.userId = userId;
 		this.description = description;
 	}
-
+	
 	public int getSurveyId() {
 		return surveyId;
 	}
@@ -56,6 +56,6 @@ public class Survey implements Serializable{
 	@Override
 	public String toString() {
 		return "Survey [surveyId=" + surveyId + ", userId=" + userId + ", description=" + description + "]";
-	};	
+	}
 
 }
